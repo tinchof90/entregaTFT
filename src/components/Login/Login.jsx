@@ -4,12 +4,11 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import { Card, Container, Col, Row } from "react-bootstrap";
 import './Login.css';
-import { useState } from "react";
-import reducer from "./reducers/reducer";
+import reducer from "../../store/reducer";
+
+const store = createStore(reducer);
 
 const Login = () => {
-  const [isLogin] = useState(false);
-
   return (
     <div>
       <Provider store={store}>
@@ -24,7 +23,9 @@ const Login = () => {
           <Card>
             <Card.Body>
               <Row>
-                {<Col><Login></Login></Col>}                
+                <Col>
+                  <UserForm requestedData={userLogin} buttonName="Login" />
+                </Col>
               </Row>
             </Card.Body>
           </Card>

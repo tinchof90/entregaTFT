@@ -6,6 +6,7 @@ const Registrar = () => {
     <UserForm
       requestedData={userRegistro}
       buttonName={'Registrar'}
+      buttonRegistro={'Registrar'}
     />
   );
 };
